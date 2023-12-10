@@ -46,8 +46,8 @@ namespace rjp_test.Controllers
                     Balance = account.Balance,
                     Transactions = transactions,
                 };
-
-                return new JsonResult(Ok(data));
+               
+                 return new JsonResult(Ok(data));
             }
             catch (Exception ex)
             {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("rjp_test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd943759cbc053fdacb10bd4a0640ab5516351f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc1f96933d4ad55c3a6de335fa882374d6a83eb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("rjp_test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("rjp_test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

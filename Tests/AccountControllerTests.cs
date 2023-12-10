@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Security.Principal;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using rjp_test.Controllers;
 using rjp_test.IServices;
 using rjp_test.Models;
+using rjp_test.ViewModels;
 using Xunit;
 
 namespace rjp_test.Tests.Tests
@@ -30,9 +32,14 @@ namespace rjp_test.Tests.Tests
             var controller = new AccountController(customerServiceMock.Object, accountServiceMock.Object, transactionServiceMock.Object);
 
             // Act
-            //var result = controller.openAccount(validCustomerId, initialCredit);
-            //var result = controller.openAccount(validCustomerId.ToString, initialCredit.ToString);
-           var  result = 1;
+
+            AccountViewModel data = new AccountViewModel
+            {
+                CustomerId = validCustomerId,
+                InitialCredit = initialCredit,
+            };
+
+            var result = controller.OpenAccount(data);
             // Assert
             Assert.IsType<OkObjectResult>(result);
         }
