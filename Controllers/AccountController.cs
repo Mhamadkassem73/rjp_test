@@ -38,8 +38,7 @@ namespace rjp_test.Controllers
 
                 var viewModel = new AccountViewModel
                 {
-                    Customers = customers.ToList(),
-                    InitialCredit = 101
+                    Customers = customers.ToList()
                 };
 
                 return View(viewModel);

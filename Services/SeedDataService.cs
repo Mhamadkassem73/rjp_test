@@ -14,12 +14,15 @@ namespace rjp_test.Services
 
         public void Seed()
         {
+
+
+            //add default data
             if (!_context.Customers.Any())
             {
                 _context.Customers.AddRange(
                     new Customer { Id = 1, Name = "Mohamad", Surname = "Kassem" },
                     new Customer { Id = 2, Name = "Miled", Surname = "Nasrallah" }
-                // Add more default customers as needed
+     
                 );
 
                 _context.SaveChanges();
