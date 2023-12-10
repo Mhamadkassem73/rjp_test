@@ -146,3 +146,5 @@ C:\Users\pc\source\repos\rjp_test\rjp_test\bin\Debug\net6.0\zh-Hans\Microsoft.Vi
 C:\Users\pc\source\repos\rjp_test\rjp_test\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\pc\source\repos\rjp_test\rjp_test\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\pc\source\repos\rjp_test\rjp_test\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Users\pc\source\repos\rjp_test\rjp_test\obj\Debug\net6.0\rjp_test.RazorAssemblyInfo.cache
+C:\Users\pc\source\repos\rjp_test\rjp_test\obj\Debug\net6.0\rjp_test.RazorAssemblyInfo.cs

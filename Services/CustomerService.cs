@@ -2,6 +2,7 @@
 using rjp_test.IServices;
 using rjp_test.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace rjp_test.Services
 {
@@ -25,6 +26,21 @@ namespace rjp_test.Services
             }
 
             return result;
+        }
+
+        public async Task<Customer[]> GetAllCustomersAsync()
+        {
+            try
+            {
+                Customer[] result = await _context.Customers.ToArrayAsync();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception
+                Console.WriteLine($"An error occurred while fetching customers 123: {ex.Message}");
+                throw; // Rethrow the exception to propagate it further
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 
 builder.Services.AddScoped<SeedDataService>();
+builder.Services.AddControllersWithViews();
 
 // Add services to the container.
 builder.Services.AddControllers();

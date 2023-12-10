@@ -17,3 +17,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\pc\source\repos\rjp_test\rjp_test
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/pc/source/repos/rjp_test/rjp_test/Views/Account/OpenAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxPcGVuQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

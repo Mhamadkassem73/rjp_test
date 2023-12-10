@@ -5,5 +5,6 @@ namespace rjp_test.IServices
     public interface ICustomerService
     {
         Customer getCustomerById(int customerId);
+        Task<Customer[]> GetAllCustomersAsync();
     }
 }
