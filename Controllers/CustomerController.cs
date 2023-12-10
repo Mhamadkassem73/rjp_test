@@ -66,6 +66,7 @@ namespace rjp_test.Controllers
         public JsonResult getAllCustomers()
         {
             var result = _context.Customers.ToList();
+
             return new JsonResult(Ok(result));
         }
     }

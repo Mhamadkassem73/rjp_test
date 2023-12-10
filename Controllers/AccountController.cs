@@ -41,8 +41,6 @@ namespace rjp_test.Controllers
                 {
                     _transactionService.ProcessTransaction(account.Id, initialCredit);
                 }
-
-
                 return Ok("Account opened successfully");
             }
             catch (Exception ex)

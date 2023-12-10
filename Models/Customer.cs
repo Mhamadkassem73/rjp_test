@@ -1,4 +1,8 @@
-﻿namespace rjp_test.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+
+namespace rjp_test.Models
 {
     public class Customer
     {

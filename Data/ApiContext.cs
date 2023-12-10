@@ -11,6 +11,7 @@ namespace rjp_test.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
-        public ApiContext(DbContextOptions<ApiContext> options) : base(options) { }
+        public ApiContext(DbContextOptions<ApiContext> options) : base(options) {}
+
     }
 }
