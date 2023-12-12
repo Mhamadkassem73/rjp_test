@@ -1,4 +1,5 @@
 ﻿using Castle.Core.Resource;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -29,60 +30,61 @@ namespace rjp_test.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IActionResult> OpenAccount()
-        {
-            try
-            {
-                Customer[] customers = await _customerService.GetAllCustomersAsync();
+        //[HttpGet]
+        //public async Task<IActionResult> OpenAccount()
+        //{
+        //    try
+        //    {
+        //        Customer[] customers = await _customerService.GetAllCustomersAsync();
 
-                var viewModel = new AccountViewModel
-                {
-                    Customers = customers.ToList()
-                };
+        //        var viewModel = new AccountViewModel
+        //        {
+        //            Customers = customers.ToList()
+        //        };
 
-                return View(viewModel);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred while fetching customers: {ex.Message}");
-                throw;
-            }
-        }
+        //        return View(viewModel);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"An error occurred while fetching customers: {ex.Message}");
+        //        throw;
+        //    }
+        //}
 
 
         [HttpPost]
-        public IActionResult OpenAccount([FromForm] AccountViewModel model)
+        public JsonResult OpenAccount(AccountViewModel model)
         {
-            
+
             Console.WriteLine(model.CustomerId);
 
 
             Console.WriteLine(model.InitialCredit);
            int CustomerId = model.CustomerId;
            float InitialCredit = model.InitialCredit;
-
+         
             try
               {
                   var customerDb = _customerService.getCustomerById(CustomerId);
                   if (customerDb == null)
                   {
-                      return BadRequest("Invalid input parameters");
+                      return new JsonResult(BadRequest("Invalid input parameters"));
                   }
                   var account = _accountService.OpenAccount(CustomerId, InitialCredit);
                   if (account == null)
                   {
-                      return StatusCode(500, "An error occurred while opening the account");
+                    return new JsonResult(StatusCode(500, "An error occurred while opening the account"));
                   }
                   if (InitialCredit != 0 && account != null)
                   {
                       _transactionService.ProcessTransaction(account.Id, InitialCredit);
                   }
-                  return Ok("Account opened successfully");
-              }
+                //return Ok("Account opened successfully");
+                return new JsonResult(Ok("Account opened successfully"));
+            }
               catch (Exception ex)
               {
-                  return StatusCode(500, "An error occurred while opening the account");
+                  return new JsonResult(StatusCode(500, "An error occurred while opening the account"));
               }
           }
       }

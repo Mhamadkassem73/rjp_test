@@ -21,6 +21,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200") // Replace with your Angular app's URL
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +46,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseCors("AllowAngularApp");
 // Retrieve SeedDataService and call Seed method during application startup
 using (var serviceScope = app.Services.CreateScope())
 {
